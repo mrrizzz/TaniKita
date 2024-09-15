@@ -1,7 +1,5 @@
-import AuthHeroSection from "@/app/components/auth/authhero";
-import { LoginForm } from "@/app/components/auth/loginform";
-import { SignupForm } from "@/app/components/auth/signupform";
-import { Card } from "@/components/ui/card";
+import AuthHeroSection from "@/components/auth/authhero";
+import { SignupForm } from "@/components/auth/signupform";
 import React from "react";
 
 export const metadata = {

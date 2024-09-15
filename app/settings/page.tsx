@@ -10,7 +10,7 @@ export default function Home() {
       <h1>HELLOOOOOOOOOOOO</h1>
       <div>
         <Button onClick={() => router.push("/login")} size="lg">
-          CLICKK MEEE
+          HALLOOOOO SELAMAT BERHASIL LOGIN
         </Button>
       </div>
     </main>

@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function AuthHeroSection() {
   return (
     <div className="hidden lg:flex lg:w-6/10 bg-primary flex-col justify-between p-12">
