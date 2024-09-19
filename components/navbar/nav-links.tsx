@@ -1,5 +1,4 @@
 "use client";
-
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import clsx from "clsx";
@@ -18,10 +17,10 @@ export default function NavList({ isMenuOpen }: { isMenuOpen: boolean }) {
   return (
     <nav
       className={clsx(
-        "transition-all duration-500 ease-out", // Tambahkan transisi yang lebih halus
+        "transition-all duration-500 ease-in-out",
         isMenuOpen
           ? "max-h-screen opacity-100 transform translate-y-0"
-          : "max-h-0 opacity-0 transform -translate-y-4", // Transisi dengan transform dan opacity
+          : "max-h-0 opacity-0 transform -translate-y-4 md:max-h-screen md:opacity-100 md:transform-none",
         "overflow-hidden md:overflow-visible",
       )}
     >

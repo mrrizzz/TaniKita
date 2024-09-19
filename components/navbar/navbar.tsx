@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useEffect, useRef } from "react";
 import NavList from "./nav-links";
 import Logo from "./logo";
@@ -16,11 +15,9 @@ export default function Navbar() {
         setIsMenuOpen(false);
       }
     }
-
     if (isMenuOpen) {
       document.addEventListener("mousedown", handleClickOutside);
     }
-
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -45,9 +42,11 @@ export default function Navbar() {
             </div>
           </div>
           <div
-            className={`${
-              isMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
-            } w-full md:flex md:w-auto md:order-1 transition-all duration-500 ease-in-out overflow-hidden`}
+            className={`w-full md:block md:w-auto md:order-1 transition-all duration-300 ease-in-out ${
+              isMenuOpen
+                ? "max-h-screen opacity-100"
+                : "max-h-0 opacity-0 md:max-h-screen md:opacity-100"
+            } overflow-hidden md:overflow-visible`}
             onMouseLeave={() => setIsMenuOpen(false)}
           >
             <NavList isMenuOpen={isMenuOpen} />
