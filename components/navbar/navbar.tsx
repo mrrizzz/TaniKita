@@ -1,27 +1,32 @@
 "use client";
+
 import { useState, useEffect, useRef } from "react";
+import { FaBars } from "react-icons/fa";
 import NavList from "./nav-links";
 import Logo from "./logo";
 import AuthLinks from "./auth-button";
-import { FaBars } from "react-icons/fa";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
+    const handleClickOutside = (event: MouseEvent) => {
       if (navRef.current && !navRef.current.contains(event.target as Node)) {
         setIsMenuOpen(false);
       }
-    }
+    };
+
     if (isMenuOpen) {
       document.addEventListener("mousedown", handleClickOutside);
     }
+
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [isMenuOpen]);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
     <header>
@@ -32,10 +37,11 @@ export default function Navbar() {
             <button
               type="button"
               className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              onClick={toggleMenu}
+              aria-expanded={isMenuOpen}
+              aria-label="Toggle navigation menu"
             >
-              <span className="sr-only">Open main menu</span>
-              <FaBars className="w-6 h-6" />
+              <FaBars className="w-6 h-6" aria-hidden="true" />
             </button>
             <div className="hidden md:flex md:items-center md:space-x-4 rtl:space-x-reverse">
               <AuthLinks />
@@ -47,7 +53,6 @@ export default function Navbar() {
                 ? "max-h-screen opacity-100"
                 : "max-h-0 opacity-0 md:max-h-screen md:opacity-100"
             } overflow-hidden md:overflow-visible`}
-            onMouseLeave={() => setIsMenuOpen(false)}
           >
             <NavList isMenuOpen={isMenuOpen} />
             <div className="md:hidden mt-3 flex justify-center">
