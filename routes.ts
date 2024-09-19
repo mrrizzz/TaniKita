@@ -10,7 +10,7 @@ export const publicRoutes = ["/"];
  * These routes will redirect logged in users to /settings
  * @type {string[]}
  */
-export const authRoutes = ["/login", "/register"];
+export const authRoutes = ["/login", "/signup"];
 
 /**
  * The prefix for API authentication routes
@@ -23,4 +23,4 @@ export const apiAuthPrefix = "/api/auth";
  * The default redirect path after logging in
  * @type {string}
  */
-export const DEFAULT_LOGIN_REDIRECT = "/settings";
+export const DEFAULT_LOGIN_REDIRECT = "/home";

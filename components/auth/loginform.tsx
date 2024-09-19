@@ -4,12 +4,13 @@ import { useState, useTransition } from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import { SignInInput, signInSchema } from "@/lib/schemas";
+import { LoginInput, LoginSchema } from "@/lib/schemas";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { signIn } from "next-auth/react";
 import { login } from "@/actions/login";
 import { InputField } from "@/components/ui/input-field";
 import { FcGoogle } from "react-icons/fc";
+import { DEFAULT_LOGIN_REDIRECT } from "@/routes";
 
 export function LoginForm() {
   const [isPending, startTransition] = useTransition();
@@ -20,22 +21,28 @@ export function LoginForm() {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<SignInInput>({
-    resolver: zodResolver(signInSchema),
+  } = useForm<LoginInput>({
+    resolver: zodResolver(LoginSchema),
     defaultValues: {
       emailOrUsername: "",
       password: "",
     },
   });
 
-  const onSubmit = async (data: SignInInput) => {
+  const onSubmit = async (data: LoginInput) => {
+    console.log(data);
     setError("");
     setSuccess("");
     startTransition(() => {
       login(data).then((data) => {
-        setError(data.errors);
-        setSuccess(data.success);
+        setError(data?.errors ?? "");
       });
+    });
+  };
+
+  const googleOnClick = (providers: string) => {
+    signIn(providers, {
+      callbackUrl: DEFAULT_LOGIN_REDIRECT,
     });
   };
 
@@ -84,7 +91,7 @@ export function LoginForm() {
 
           <Button
             disabled={isPending}
-            onClick={() => signIn("google")}
+            onClick={() => googleOnClick("google")}
             variant="outline"
             className="w-full border border-gray-300 text-gray-700 hover:bg-gray-50 hover:text-gray-900"
           >

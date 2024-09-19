@@ -31,7 +31,7 @@ const config: Config = {
           foreground: "#000000", // Black text on secondary color
         },
         accent: {
-          DEFAULT: "#4A7862", // Lighter green used in some elements
+          DEFAULT: "#2e7d47", // Lighter green used in some elements
           foreground: "#FFFFFF", // White text on accent color
         },
         muted: {
