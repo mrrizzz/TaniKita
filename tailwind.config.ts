@@ -8,56 +8,77 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-      },
-      colors: {
-        background: "#FFFFFF", // White background
-        foreground: "#000000", // Black text
-        primary: {
-          DEFAULT: "#215732", // Dark green from the logo and buttons
-          foreground: "#FFFFFF", // White text on primary color
-        },
-        secondary: {
-          DEFAULT: "#E8ECEB", // Light gray used in card backgrounds
-          foreground: "#000000", // Black text on secondary color
-        },
-        accent: {
-          DEFAULT: "#2e7d47", // Lighter green used in some elements
-          foreground: "#FFFFFF", // White text on accent color
-        },
-        muted: {
-          DEFAULT: "#6C757D", // Muted text color
-          foreground: "#FFFFFF", // White text on muted background
-        },
-        card: {
-          DEFAULT: "#FFFFFF", // White card background
-          foreground: "#000000", // Black text on card
-        },
-        destructive: {
-          DEFAULT: "#DC3545", // Standard red for destructive actions
-          foreground: "#FFFFFF", // White text on destructive background
-        },
-        border: "#D1D5DB", // Light gray for borders
-        input: "#E8ECEB", // Light gray for input backgrounds
-        ring: "#215732", // Dark green for focus rings
-        chart: {
-          "1": "#215732", // Dark green
-          "2": "#4A7862", // Medium green
-          "3": "#6B9080", // Light green
-          "4": "#A4C3B2", // Very light green
-          "5": "#CCE3DE", // Pale green
-        },
-      },
-    },
+  	extend: {
+  		backgroundImage: {
+  			'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+  			'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
+  		},
+  		borderRadius: {
+  			lg: 'var(--radius)',
+  			md: 'calc(var(--radius) - 2px)',
+  			sm: 'calc(var(--radius) - 4px)'
+  		},
+  		colors: {
+  			background: '#FFFFFF',
+  			foreground: '#000000',
+  			primary: {
+  				DEFAULT: '#215732',
+  				foreground: '#FFFFFF'
+  			},
+  			secondary: {
+  				DEFAULT: '#E8ECEB',
+  				foreground: '#000000'
+  			},
+  			accent: {
+  				DEFAULT: '#2e7d47',
+  				foreground: '#FFFFFF'
+  			},
+  			muted: {
+  				DEFAULT: '#6C757D',
+  				foreground: '#FFFFFF'
+  			},
+  			card: {
+  				DEFAULT: '#FFFFFF',
+  				foreground: '#000000'
+  			},
+  			destructive: {
+  				DEFAULT: '#DC3545',
+  				foreground: '#FFFFFF'
+  			},
+  			border: '#D1D5DB',
+  			input: '#E8ECEB',
+  			ring: '#215732',
+  			chart: {
+  				'1': '#215732',
+  				'2': '#4A7862',
+  				'3': '#6B9080',
+  				'4': '#A4C3B2',
+  				'5': '#CCE3DE'
+  			}
+  		},
+  		keyframes: {
+  			'accordion-down': {
+  				from: {
+  					height: '0'
+  				},
+  				to: {
+  					height: 'var(--radix-accordion-content-height)'
+  				}
+  			},
+  			'accordion-up': {
+  				from: {
+  					height: 'var(--radix-accordion-content-height)'
+  				},
+  				to: {
+  					height: '0'
+  				}
+  			}
+  		},
+  		animation: {
+  			'accordion-down': 'accordion-down 0.2s ease-out',
+  			'accordion-up': 'accordion-up 0.2s ease-out'
+  		}
+  	}
   },
   plugins: [require("tailwindcss-animate")],
 };
