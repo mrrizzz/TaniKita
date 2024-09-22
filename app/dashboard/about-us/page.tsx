@@ -1,7 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import FeatureItem , { features } from "@/components/feature-item";
-import { Card } from "@/components/ui/card";
+import { featureCards } from "@/components/feature-item";
 
 export default function AboutUs() {
     const router = useRouter();
@@ -16,9 +16,7 @@ export default function AboutUs() {
             </div>
             <div className="mt-20 col-span-12 grid grid-cols-12 gap-12">
                 <h3 className="font-bold text-2xl col-span-12 text-center">Our Core Features</h3>
-                <Card className="col-start-0 col-span-4 min-h-64"></Card>
-                <Card className="col-start-0 col-span-4 min-h-64"></Card>
-                <Card className="col-start-0 col-span-4 min-h-64"></Card>
+                {featureCards.map((card, index) => card.renderCard())}
             </div>
             <div className="mt-20 col-span-12 flex flex-col gap-12">
                 <FeatureItem 

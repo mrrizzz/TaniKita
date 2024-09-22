@@ -1,5 +1,7 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserTie, faListCheck, faWheatAwn, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 interface FeatureItemProps {
   title: string;
@@ -76,3 +78,43 @@ export default function FeatureItem({
     </Card>
   );
 }
+
+class FeatureCard {
+  title: string;
+  description: string;
+  icon: IconDefinition;
+
+  constructor(title: string, description: string, icon: IconDefinition) {
+      this.title = title;
+      this.description = description;
+      this.icon = icon;
+  }
+
+  renderCard() {
+      return (
+          <Card className="col-span-4 shadow-lg flex flex-col items-center py-10 px-10 gap-y-5">
+              <FontAwesomeIcon icon={this.icon} className="h-10"/>
+              <h4 className="text-lg font-bold">{this.title}</h4>
+              <p className="text-justify">{this.description}</p>
+          </Card>
+      );
+  }
+}
+
+export const featureCards = [
+  new FeatureCard(
+    "AI-Powered Farming Assistant",
+    "Our intelligent assistant provides personalized advice, answers questions, and offers real-time support to farmers, helping them make informed decisions throughout the growing season.",
+    faUserTie
+  ),
+  new FeatureCard(
+    "Comprehensive Management Tools",
+    "From crop planning to harvest tracking, our suite of management tools helps farmers streamline operations, optimize resource allocation, and boost overall farm productivity.",
+    faListCheck
+  ),
+  new FeatureCard(
+    "Smart Crop Recommendation",
+    "Our advanced algorithm analyzes soil conditions, climate data, and market trends to suggest the best crops for your specific environment, maximizing yield potential and profitability",
+    faWheatAwn
+  ),
+];
