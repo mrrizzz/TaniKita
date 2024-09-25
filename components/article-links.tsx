@@ -125,8 +125,8 @@ export const articles = [
 export const ArticleLink: React.FC<ArticleLinkProps> = ({ href, imageSrc, imageAlt, category, title, date, description }) => {
     return (
         <Link href={href} className="flex flex-col gap-y-2 group">
-            <div className="w-full h-56 rounded-lg border overflow-hidden">
-                <Image src={imageSrc} alt={imageAlt} width={400} height={224} className="transform transition-transform duration-300 group-hover:scale-110" />
+            <div className="w-full h-72 rounded-lg border overflow-hidden">
+                <Image src={imageSrc} alt={imageAlt} width={400} height={224} objectFit="cover" className="w-full transform transition-transform duration-300 group-hover:scale-110" />
             </div>
             <div className="flex gap-2">
                 <h5 className="text-primary font-bold">{category}</h5>

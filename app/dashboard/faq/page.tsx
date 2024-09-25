@@ -8,7 +8,7 @@ export default function Faq() {
     const router = useRouter();
 
     return (
-        <div className="grid grid-cols-12 gap-x-5">
+        <div className="grid grid-cols-12 gap-x-5 w-10/12 mx-auto mt-20">
             <h2 className="text-black font-bold text-center text-4xl col-start-5 col-span-4 ">HOW CAN WE HELP?</h2>
             <div className="col-start-4 col-span-6 mt-12 group flex bg-slate-100 rounded-lg h-12 items-center border outline focus-within:outline-primary focus-within:outline-2">
                 <FontAwesomeIcon icon={faSearch} className="w-9 text-black ps-3"/>
@@ -20,7 +20,7 @@ export default function Faq() {
             <div className="col-span-12 mt-12">
                 <p className="text-black text-center mb-5">Commonly asked questions</p>
                 <hr />
-                <div  className="mt-12 text-black grid grid-cols-3 gap-5">
+                <div  className="mt-12 text-black grid grid-cols-3 gap-x-12 gap-y-5">
                     {faqItems.map((faqItem, index) => faqItem.render())}
                 </div>
             </div>

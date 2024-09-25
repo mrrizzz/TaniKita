@@ -6,7 +6,7 @@ export default function Services() {
     const router = useRouter();
 
     return (
-        <div className="grid grid-cols-12 gap-x-5 text-black">
+        <div className="grid grid-cols-12 gap-x-5 text-black w-10/12 mx-auto mt-20">
             <div className="bg-primary h-80 col-span-5"></div>
             <div className="col-span-7 flex flex-col justify-center">
                 <h2 className="font-bold text-4xl">Our Services</h2>

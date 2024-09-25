@@ -7,7 +7,7 @@ export default function AboutUs() {
     const router = useRouter();
 
     return (
-        <div className="grid grid-cols-12 min-h-1 gap-x-5 text-black">
+        <div className="grid grid-cols-12 min-h-1 gap-x-5 text-black w-10/12 mx-auto mt-20">
             <div className="bg-primary min-h-96 col-span-6"></div>
             <div className="col-span-6 flex flex-col justify-center">
                 <h2 className="font-bold text-4xl">Our Mission</h2>
