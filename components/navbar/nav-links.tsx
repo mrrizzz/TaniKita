@@ -1,5 +1,4 @@
 "use client";
-
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import clsx from "clsx";
@@ -22,13 +21,16 @@ export default function NavList({ isMenuOpen }: NavListProps) {
   return (
     <nav
       className={clsx(
-        "transition-all duration-500 ease-in-out overflow-hidden md:overflow-visible",
-        isMenuOpen
-          ? "max-h-screen opacity-100 transform translate-y-0 border-t border-gray-200 mt-4"
-          : "max-h-0 opacity-0 transform -translate-y-4 md:max-h-screen md:opacity-100 md:transform-none",
+        "transition-all duration-500 ease-in-out md:transition-none",
+        "md:h-auto md:opacity-100 md:overflow-visible",
+        {
+          "max-h-screen opacity-100 transform translate-y-0": isMenuOpen,
+          "max-h-0 opacity-0 transform -translate-y-4 overflow-hidden":
+            !isMenuOpen,
+        },
       )}
     >
-      <ul className="flex flex-col md:flex-row space-y-2 md:space-y-0 py-4 md:py-0">
+      <ul className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 py-4 md:py-0">
         {links.map((link) => (
           <li key={link.href}>
             <Link
