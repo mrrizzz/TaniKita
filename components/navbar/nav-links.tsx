@@ -8,7 +8,7 @@ const links = [
   { name: "Article", href: "/dashboard/article" },
   { name: "FAQ", href: "/dashboard/faq" },
   { name: "Services", href: "/dashboard/services" },
-  { name: "About Us", href: "/dashboard/about" },
+  { name: "About Us", href: "/dashboard/about-us" },
 ];
 
 interface NavListProps {
