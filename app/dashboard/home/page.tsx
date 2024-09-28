@@ -152,11 +152,11 @@ export default function Home() {
 
   return (
     <>
-      <div className="grid grid-cols-12 gap-5">
-        <div className="col-span-3 col-start-2">
+      <div className="flex flex-col md:grid md:grid-cols-12 gap-5">
+        <div className="col-span-3 col-start-2 mx-3">
           <Welcome />
         </div>
-        <div className="col-span-8 h-[calc(100vh-4rem)]">
+        <div className="col-span-8 h-80 md:h-[calc(100vh-4rem)]">
           <WelcomeCarousel />
         </div>
         <div className="col-span-10 col-start-2 mt-20">
