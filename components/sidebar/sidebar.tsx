@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from "next/image";
+import { usePathname } from 'next/navigation';
 import { Home, Lightbulb, NotepadText, LogOut } from 'lucide-react';
 
 interface SidebarProps {
@@ -12,12 +13,21 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ onSelectMenu, isCollapsed }) => {
   const [selectedMenu, setSelectedMenu] = useState<string>('Home');
+  const pathname = usePathname();
 
   const menuItems = [
     { name: 'Home', href: '/core-features/home', icon: Home },
     { name: 'Smart Crop Planner', href: '/core-features/smart-crop-planner', icon: Lightbulb },
     { name: 'Crop Maintenance', href: '/core-features/crop-maintenance-and-management', icon: NotepadText },
   ];
+
+  useEffect(() => {
+    const currentMenuItem = menuItems.find(item => pathname.startsWith(item.href));
+    if (currentMenuItem) {
+      setSelectedMenu(currentMenuItem.name);
+      onSelectMenu(currentMenuItem.name);
+    }
+  }, [pathname, onSelectMenu]);
 
   const handleMenuClick = (name: string) => {
     setSelectedMenu(name);
@@ -38,8 +48,8 @@ const Sidebar: React.FC<SidebarProps> = ({ onSelectMenu, isCollapsed }) => {
           {menuItems.map((item, index) => (
             <Link key={index} href={item.href} onClick={() => handleMenuClick(item.name)}>
               <li
-                className={`mb-2 flex items-center text-white hover:bg-green-700 p-2 rounded gap-x-5 
-                ${selectedMenu === item.name ? 'bg-green-700' : ''}`}
+                className={`mb-2 flex items-center text-white hover:bg-green-700 p-2 rounded gap-x-5
+                 ${selectedMenu === item.name ? 'bg-green-700' : ''}`}
               >
                 <div>
                   <item.icon className="text-white" />
@@ -50,7 +60,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onSelectMenu, isCollapsed }) => {
           ))}
         </ul>
       </nav>
-      <Link href="">
+      <Link href="/dashboard/home">
         <div className="mt-auto w-full flex items-center text-gray-400 hover:bg-red-500 hover:text-white group p-2 rounded gap-x-5">
           <div>
             <LogOut className="text-gray-400 group-hover:text-white" />
