@@ -97,7 +97,6 @@ const SmartCropPlanner = () => {
 
   return (
     <div>
-
       <div className="my-4">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-bold ">Maintenance and Manage Your Project</h2>
@@ -417,3 +416,6 @@ const SmartCropPlanner = () => {
           {cardCount === 6 ? <FaAngleDown /> : <FaAngleUp />}
         </Button>
       </div>
+    </div>
+  );
+}
