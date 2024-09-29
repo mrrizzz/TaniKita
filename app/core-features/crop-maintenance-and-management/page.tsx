@@ -417,8 +417,3 @@ const SmartCropPlanner = () => {
           {cardCount === 6 ? <FaAngleDown /> : <FaAngleUp />}
         </Button>
       </div>
-    </div>
-  );
-};
-
-export default SmartCropPlanner;

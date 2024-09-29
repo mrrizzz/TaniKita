@@ -123,7 +123,7 @@ const SmartCropPlanner = () => {
   }
 
   return (
-    <div>
+    <div className='grid grid-cols-12 gap-x-5'>
       <h2 className="text-2xl font-bold mb-4">Smart Crop Planner</h2>
 
       <div className="flex flex-row gap-2">
