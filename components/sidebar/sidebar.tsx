@@ -18,7 +18,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onSelectMenu, isCollapsed }) => {
   const menuItems = [
     { name: 'Home', href: '/core-features/home', icon: Home },
     { name: 'Smart Crop Planner', href: '/core-features/smart-crop-planner', icon: Lightbulb },
-    { name: 'Crop Maintenance', href: '/core-features/crop-maintenance-and-management', icon: NotepadText },
+    { name: 'Crop Maintenance', href: '/core-features/crop-maintenance-project', icon: NotepadText },
   ];
 
   useEffect(() => {
