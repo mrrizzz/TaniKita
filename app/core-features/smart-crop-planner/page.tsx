@@ -49,53 +49,53 @@ import Link from "next/link";
 
 const plantData = [
   {
-    name: "Carrot",
-    growthTime: 75,
-    yield: 2,
-    type: "vegetable",
-    imageUrl: "/plants/carrot.jpg",
+      name: "Carrot",
+      growthTime: 75,
+      yield: 2,
+      type: "vegetable",
+      imageUrl: "/plants/carrot.jpg",
   },
   {
-    name: "Tomato",
-    growthTime: 60,
-    yield: 5,
-    type: "vegetable",
-    imageUrl: "/plants/tomato.jpg",
+      name: "Tomato",
+      growthTime: 60,
+      yield: 5,
+      type: "vegetable",
+      imageUrl: "/plants/tomato.jpg",
   },
   {
-    name: "Lettuce",
-    growthTime: 45,
-    yield: 1.5,
-    type: "vegetable",
-    imageUrl: "/plants/lettuce.jpg",
+      name: "Lettuce",
+      growthTime: 45,
+      yield: 1.5,
+      type: "vegetable",
+      imageUrl: "/plants/lettuce.jpg",
   },
   {
-    name: "Cucumber",
-    growthTime: 50,
-    yield: 3,
-    type: "vegetable",
-    imageUrl: "/plants/cucumber.jpg",
+      name: "Cucumber",
+      growthTime: 50,
+      yield: 3,
+      type: "vegetable",
+      imageUrl: "/plants/cucumber.jpg",
   },
   {
-    name: "Pepper",
-    growthTime: 70,
-    yield: 4,
-    type: "vegetable",
-    imageUrl: "/plants/pepper.jpg",
+      name: "Pepper",
+      growthTime: 70,
+      yield: 4,
+      type: "vegetable",
+      imageUrl: "/plants/pepper.jpg",
   },
   {
-    name: "Rose",
-    growthTime: 30,
-    yield: 0,
-    type: "flower",
-    imageUrl: "/plants/rose.jpg",
+      name: "Rose",
+      growthTime: 30,
+      yield: 0,
+      type: "flower",
+      imageUrl: "/plants/rose.jpg",
   },
   {
-    name: "Sunflower",
-    growthTime: 70,
-    yield: 0,
-    type: "flower",
-    imageUrl: "/plants/sunflower.jpg",
+      name: "Sunflower",
+      growthTime: 70,
+      yield: 0,
+      type: "flower",
+      imageUrl: "/plants/sunflower.jpg",
   },
 ];
 
@@ -256,6 +256,7 @@ const SmartCropPlanner = () => {
 
       <Separator className="my-4" />
 
+        <p>Recent Planting</p>
       <div className="grid grid-cols-2 gap-2 lg:grid-cols-3 lg:gap-4 my-2">
         {plantData.map((item, index) => {
           if (counter < cardCount) {
