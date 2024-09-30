@@ -170,10 +170,11 @@ const PlantingNewPlan = () => {
                   </Popover>
                 </div>
               </div>
-
-              <Button className="mt-6 bg-green-700 hover:bg-green-800 text-white">
-                Create Project
-              </Button>
+              <Link href={"./smart-crop-planner"}>
+                <Button className="mt-6 bg-green-700 hover:bg-green-800 text-white">
+                  Create Project
+                </Button>
+              </Link>
             </form>
           </CardContent>
         </Card>

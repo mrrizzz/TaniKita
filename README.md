@@ -24,8 +24,16 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 ## Tentang TaniKita
 
-**Aplikasi**: Agrikultur  
-**Fitur Utama**: Mengenerate saran menanam jenis tanaman berdasarkan tanggal budidaya, kondisi tanah, dan cuaca di daerah pengguna.
+**Aplikasi**: Agrikultur
+link Docs dan tutorial akses web:   https://docs.google.com/document/d/1NCB2jicyvOX3AycD6f-xsqa53ETvdz6yAd2YkpJ3rfg/edit?usp=sharing 
+**Fitur Utama**: Aplikasi ini adalah solusi modern di bidang pertanian yang memungkinkan siapa saja menanam tanaman di mana pun dan kapan pun, tanpa harus menjadi petani di ladang. Aplikasi ini menyediakan fitur cerdas yang dapat merekomendasikan jenis tanah, pupuk, dan tanggal penanaman serta panen berdasarkan lokasi geografis pengguna. Pengguna dapat memulai proyek menanam dengan mudah dan mendapatkan pengingat otomatis terkait tugas-tugas perawatan tanaman.
+
+Fitur utama aplikasi ini memungkinkan pengguna mencari jenis tanaman yang ingin ditanam, lalu mendapatkan detail lengkap mengenai lingkungan yang paling cocok untuk pertumbuhannya. Setelah memilih tanaman, pengguna dapat memulai proyek menanam dengan memasukkan tanggal mulai penanaman. Aplikasi akan memberikan pengingat otomatis untuk tugas penting seperti menyiram, memupuk, dan melindungi tanaman dari hama.
+
+Selain itu, pengguna dapat melacak progres dan kondisi tanaman mereka, termasuk memperbarui informasi pertumbuhan. Aplikasi ini juga memberikan rekomendasi cerdas tentang jenis tanah yang optimal, pupuk yang direkomendasikan, kondisi vegetasi ideal, dan tanggal penanaman terbaik berdasarkan lokasi pengguna.
+
+Dengan fitur pengingat perawatan tanaman, pengguna akan menerima notifikasi tepat waktu untuk menyiram, memupuk, serta melakukan kontrol hama, disesuaikan dengan tahap pertumbuhan tanaman dan kondisi cuaca di sekitar mereka. Aplikasi ini memastikan tanaman Anda selalu dalam kondisi optimal hingga masa panen.
+
 
 ### Penjabaran Fitur
 

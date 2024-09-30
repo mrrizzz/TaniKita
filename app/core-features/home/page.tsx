@@ -42,7 +42,7 @@ const Home = () => {
             <h2 className='font-bold text-4xl'>Planting new plant</h2>
             <span>Start a New Plant Project</span>
           </div>
-          <Link href="" className='w-20 h-20 bg-white rounded-lg flex items-center justify-center hover:scale-95 active:scale-75 transition-all duration-300'>
+          <Link href={"./planting-new-plan"} className='w-20 h-20 bg-white rounded-lg flex items-center justify-center hover:scale-95 active:scale-75 transition-all duration-300'>
             <span className='font-bold text-5xl'>+</span>
           </Link>
         </div>
